@@ -11,7 +11,9 @@
     --accent-bg-color: #404BBF;
     --btn-team-bg-color: #F4F4FD;
     --border-color: #E7E9FC;
+    --client-icon: #8E8F99;
     --modal-bg: #FCFCFC;
+    --transition
 }
 
 body {
@@ -66,7 +68,7 @@ img {
     margin: 0 auto;
 }
 
-/* header */
+/*! header */
 
 .header {
     background-color: var(--main-bg-color);
@@ -99,10 +101,6 @@ img {
     color: var(--font-color);
 }
 
-.footer-logo-link {
-    margin-bottom: 16px;
-}
-
 .logo-white {
     color: var(--logo-footer-color);
 }
@@ -111,6 +109,8 @@ img {
     display: flex;
     gap: 40px;
 }
+
+/* .menu-nav-item {} */
 
 .menu-nav-link {
     display: block;
@@ -126,6 +126,23 @@ img {
     color: var(--accent-color);
 }
 
+.current {
+    position: relative;
+}
+
+.current::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--accent-color);
+}
+
+/*! address */
+
 .contact {
     font-style: normal;
     margin-left: auto;
@@ -136,6 +153,8 @@ img {
     align-items: center;
     gap: 40px;
 }
+
+/* .contact-item {} */
 
 .contact-link {
     line-height: 1.5;
@@ -148,17 +167,20 @@ img {
     color: var(--accent-color);
 }
 
-/* section main-content */
+/*? main-content */
+
+/*! section hero */
 
 .hero {
     background-color: var(--main-darck-bg-color);
     padding: 188px 0;
-    background-image: linear-gradient (rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7) ), url(../images/people-office-1.jpg);
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)), url(../images/people-office-1.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    margin: 0 auto;
     max-width: 1440px;
+    margin: 0 auto;
 }
 
 .hero-container {
@@ -201,11 +223,13 @@ img {
     background-color: var(--accent-bg-color);
 }
 
-/* section description */
+/*! section description */
 
 .description {
     padding: 120px 0;
 }
+
+/* .description-container {} */
 
 .description-list {
     display: flex;
@@ -215,6 +239,10 @@ img {
 .description-list-item {
     width: calc((100% - 72px) /4);
 }
+
+/* .description-list-link {} */
+
+/* .description-item-icon {} */
 
 .title-section {
     font-size: 36px;
@@ -240,11 +268,13 @@ img {
     color: var(--text-color);
 }
 
-/* section work */
+/*! section work */
 
 .work {
     padding-bottom: 120px;
 }
+
+/* .work-container {} */
 
 .work-list {
     display: flex;
@@ -259,7 +289,7 @@ img {
 /* .work-item-img {} */
 
 
-/* section our-team */
+/*! section our-team */
 
 .our-team {
     background-color: var(--btn-team-bg-color);
@@ -267,6 +297,8 @@ img {
     display: flex;
     padding: 120px 0 120px;
 }
+
+/* .our-team-container {} */
 
 .team-list {
     display: flex;
@@ -284,6 +316,8 @@ img {
     box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 
+/* .team-photo {} */
+
 .team-card-content {
     padding: 32px 16px;
 }
@@ -294,11 +328,70 @@ img {
     color: var(--text-color);
 }
 
-/* section footer */
+.social-list {
+    display: flex;
+    gap: 24px;
+}
+
+/* .social-items {} */
+/* .team-social {} */
+
+.team-social-icon {
+    fill: var(--btn-team-bg-color);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-social:hover .team-social-icon,
+.team-social:focus .team-social-icon {}
+
+
+/*! section clients */
+
+.clients {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+/* .clients-container {} */
+
+.clients-list {
+    display: flex;
+    justify-content: space-around;
+    gap: 24px;
+}
+
+.clients-items {
+    min-width: calc((100% - 24px * 5) / 6);
+}
+
+/* .clients-link {} */
+
+.clients-icon {
+    fill: var(--client-icon);
+    border: 1px solid var(--client-icon);
+    border-radius: 4px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.clients-link:hover .clients-icon,
+.clients-link:focus .clients-icon {
+    fill: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+
+/*! section footer */
 
 .footer {
+    display: flex;
+    align-items: baseline;
     background-color: var(--main-darck-bg-color);
     padding: 100px 0;
+}
+
+/* .footer-container {} */
+
+.footer-logo-link {
+    margin-bottom: 16px;
 }
 
 .footer-text {
@@ -307,7 +400,34 @@ img {
     max-width: 264px;
 }
 
-/* section portfolio-content */
+.footer-list {
+    margin-left: 120px;
+}
+
+.footer-social-description {
+    color: var(--main-color);
+    letter-spacing: 0.32px;
+    margin-bottom: 16px;
+}
+
+.footer-social-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.footer-social-items {}
+
+.footer-social-link {}
+
+.footer-social-icon {
+    fill: var(--logo-footer-color);
+
+}
+
+
+
+/*! section portfolio-content */
 
 .projects {
     padding-top: 96px;
@@ -378,30 +498,49 @@ img {
     color: var(--text-color);
 }
 
+/*! section backdrop */
+
 .backdrop {
     position: fixed;
     top: 0;
     width: 100%;
     height: 100%;
+    background-color: rgba(46, 47, 66, 0.40);
+    transition: opacity var(--transition), visibility var(--transition);
+}
+
+.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
 }
 
 .modal {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform var(--transition);
     width: 408px;
     min-height: 584px;
     border-radius: 4px;
     background-color: var(--modal-bg);
+    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
 }
 
-.modal-btn {
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.close-btn {
     position: absolute;
     right: 24px;
-    top: 24 px;
+    top: 24px;
+    width: 24px;
+    height: 24px;
     background-color: var(--border-color);
-    border-radius: 4px;
     color: var(--font-color);
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    border-radius: 24px;
     cursor: pointer;
 }
