@@ -13,7 +13,8 @@
     --border-color: #E7E9FC;
     --client-icon: #8E8F99;
     --modal-bg: #FCFCFC;
-    --transition
+    --accent-footericon-color: #31D0AA;
+    --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 body {
@@ -118,7 +119,7 @@ img {
     line-height: 1.5;
     color: var(--font-color);
     padding: 24px 0;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color var(--transition);
 }
 
 .menu-nav-link:hover,
@@ -128,6 +129,7 @@ img {
 
 .current {
     position: relative;
+    color: var(--accent-color);
 }
 
 .current::after {
@@ -159,7 +161,7 @@ img {
 .contact-link {
     line-height: 1.5;
     color: var(--text-color);
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color var(--transition);
 }
 
 .contact-link:hover,
@@ -175,7 +177,7 @@ img {
     background-color: var(--main-darck-bg-color);
     padding: 188px 0;
     background-image: linear-gradient(rgba(46, 47, 66, 0.7),
-        rgba(46, 47, 66, 0.7)), url(../images/people-office-1.jpg);
+        rgba(46, 47, 66, 0.7)), url(../images/hero-bg.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -215,7 +217,7 @@ img {
     margin-left: auto;
     margin-right: auto;
     min-width: 169px;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color var(--transition);
 }
 
 .hero-btn:hover,
@@ -240,7 +242,16 @@ img {
     width: calc((100% - 72px) /4);
 }
 
-/* .description-list-link {} */
+.description-list-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 264px;
+    height: 112px;
+    border-radius: 4px;
+    background-color: var(--btn-team-bg-color);
+    margin-bottom: 8px;
+}
 
 /* .description-item-icon {} */
 
@@ -326,6 +337,7 @@ img {
     line-height: 1.5;
     text-align: center;
     color: var(--text-color);
+    margin-bottom: 8px;
 }
 
 .social-list {
@@ -334,16 +346,26 @@ img {
 }
 
 /* .social-items {} */
-/* .team-social {} */
+.team-social-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--hero-btn-bg-color);
+    border-radius: 50px;
+    border: 1px solid var(--btn-team-bg-color);
+    transition: background-color var(--transition);
+}
+
+.team-social-link:hover,
+.team-social-link:focus {
+    background-color: var(--accent-bg-color);
+}
 
 .team-social-icon {
     fill: var(--btn-team-bg-color);
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.team-social:hover .team-social-icon,
-.team-social:focus .team-social-icon {}
-
 
 /*! section clients */
 
@@ -370,7 +392,7 @@ img {
     fill: var(--client-icon);
     border: 1px solid var(--client-icon);
     border-radius: 4px;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color var(--transition);
 }
 
 .clients-link:hover .clients-icon,
@@ -383,12 +405,13 @@ img {
 
 .footer {
     display: flex;
+    justify-content: flex-start;
     align-items: baseline;
     background-color: var(--main-darck-bg-color);
     padding: 100px 0;
 }
 
-/* .footer-container {} */
+.footer-container {}
 
 .footer-logo-link {
     margin-bottom: 16px;
@@ -412,20 +435,30 @@ img {
 
 .footer-social-list {
     display: flex;
-    justify-content: space-between;
     gap: 16px;
 }
 
 .footer-social-items {}
 
-.footer-social-link {}
-
-.footer-social-icon {
-    fill: var(--logo-footer-color);
-
+.footer-social-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--hero-btn-bg-color);
+    border-radius: 25px;
+    transition: background-color var(--transition);
 }
 
+.footer-social-link:hover,
+.footer-social-link:focus {
+    background-color: var(--accent-footericon-color);
+}
 
+.footer-social-icon {
+    fill: var(--logo-footer-color)
+}
 
 /*! section portfolio-content */
 
@@ -461,7 +494,7 @@ img {
     padding: 12px 24px;
     display: block;
     margin: 0 auto;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color var(--transition);
 }
 
 .filter-btn:hover,
