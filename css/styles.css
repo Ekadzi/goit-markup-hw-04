@@ -559,6 +559,7 @@ img {
     border-radius: 4px;
     background-color: var(--modal-bg);
     box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+    padding: 72px 24px 24px;
 }
 
 .backdrop.is-hidden .modal {
@@ -572,8 +573,24 @@ img {
     width: 24px;
     height: 24px;
     background-color: var(--border-color);
-    color: var(--font-color);
     border: 1px solid rgba(0, 0, 0, 0.10);
-    border-radius: 24px;
+    border-radius: 50%;
+    padding: 0;
     cursor: pointer;
+    transition: background-color var(--transition);
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    background-color: var(--accent-bg-color);
+}
+
+.close-btn-icon {
+    fill: var(--font-color);
+    transition: fill var(--transition);
+}
+
+.close-btn-icon:hover,
+.close-btn-icon:focus {
+    fill: var(--main-color);
 }
