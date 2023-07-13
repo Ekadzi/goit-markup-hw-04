@@ -514,10 +514,37 @@ img {
 .projects-item {
     background-color: var(--main-bg-color);
     width: calc((100% - 48px) / 3);
+    overflow: hidden;
+}
+
+.projects-item:hover .project-overlay,
+.projects-item:focus .project-overlay {
+    transform: translate(0);
 }
 
 .projects-link {
     display: block;
+}
+
+.project-overlay {
+    position: relative;
+}
+
+.project-img {}
+
+.project-overlay-item {
+    position: absolute;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.32px;
+    color: var(--btn-team-bg-color);
+    background-color: var(--hero-btn-bg-color);
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 40px 32px 0;
+    transform: translateY(100%);
+    transition: transform var(--transition);
 }
 
 .projects-card-content {
