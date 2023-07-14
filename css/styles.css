@@ -404,14 +404,16 @@ img {
 /*! section footer */
 
 .footer {
-    display: flex;
-    justify-content: flex-start;
-    align-items: baseline;
     background-color: var(--main-darck-bg-color);
     padding: 100px 0;
 }
 
-.footer-container {}
+.footer-container {
+    display: flex;
+    align-items: baseline;
+}
+
+/* .footer-logo-text {} */
 
 .footer-logo-link {
     margin-bottom: 16px;
