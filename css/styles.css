@@ -317,7 +317,6 @@ img {
 .team-list {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 24px;
 }
 
@@ -347,6 +346,7 @@ img {
 
 .social-list {
     display: flex;
+    justify-content: center;
     gap: 24px;
 }
 
@@ -404,14 +404,14 @@ img {
     transition: border-color var(--transition), color var(--transition);
 }
 
-.clients-icon {
-    fill: currentColor;
-}
-
-.clients-link:hover .clients-icon,
-.clients-link:focus .clients-icon {
+.clients-link:hover,
+.clients-link:focus {
     color: var(--accent-color);
     border-color: var(--accent-color);
+}
+
+.clients-icon {
+    fill: currentColor;
 }
 
 /*! section footer */
@@ -642,6 +642,12 @@ img {
     transition: background-color var(--transition), border var(--transition);
 }
 
+.close-btn:hover,
+.close-btn:focus {
+    background-color: var(--accent-bg-color);
+    border: none;
+}
+
 .close-btn-icon {
     fill: var(--font-color);
     transition: fill var(--transition);
@@ -650,6 +656,4 @@ img {
 .close-btn:hover .close-btn-icon,
 .close-btn:focus .close-btn-icon {
     fill: var(--main-color);
-    background-color: #404bbf;
-    border: none;
 }
