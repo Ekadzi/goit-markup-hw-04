@@ -74,6 +74,9 @@ img {
 .header {
     background-color: var(--main-bg-color);
     border-bottom: 1px solid var(--border-color);
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .header-container {
@@ -136,7 +139,7 @@ img {
     content: '';
     position: absolute;
     left: 0;
-    bottom: 20px;
+    bottom: -1px;
     width: 100%;
     height: 4px;
     border-radius: 2px;
@@ -242,7 +245,7 @@ img {
     width: calc((100% - 72px) /4);
 }
 
-.description-list-link {
+.description-list-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -321,6 +324,7 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: calc((100% - 72px) / 4);
     background-color: var(--main-bg-color);
     border-radius: 0px 0px 4px 4px;
@@ -330,7 +334,7 @@ img {
 /* .team-photo {} */
 
 .team-card-content {
-    padding: 32px 16px;
+    padding: 32px 0;
 }
 
 .team-position {
@@ -353,7 +357,7 @@ img {
     width: 40px;
     height: 40px;
     background-color: var(--hero-btn-bg-color);
-    border-radius: 50px;
+    border-radius: 50%;
     border: 1px solid var(--btn-team-bg-color);
     transition: background-color var(--transition);
 }
@@ -384,20 +388,28 @@ img {
 
 .clients-items {
     min-width: calc((100% - 24px * 5) / 6);
+    height: 88px;
 }
 
-/* .clients-link {} */
-
-.clients-icon {
-    fill: var(--client-icon);
+.clients-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
     border: 1px solid var(--client-icon);
     border-radius: 4px;
-    transition: fill var(--transition), border var(--transition);
+    color: var(--client-icon);
+    transition: color var(--transition), border var(--transition);
+}
+
+.clients-icon {
+    fill: currentColor;
 }
 
 .clients-link:hover .clients-icon,
 .clients-link:focus .clients-icon {
-    fill: var(--accent-color);
+    color: var(--accent-color);
     border: 1px solid var(--accent-color);
 }
 
@@ -413,7 +425,9 @@ img {
     align-items: baseline;
 }
 
-/* .footer-logo-text {} */
+.footer-logo-text {
+    margin-right: 120px;
+}
 
 .footer-logo-link {
     margin-bottom: 16px;
@@ -430,8 +444,10 @@ img {
 }
 
 .footer-social-description {
+    font-weight: 500;
+    line-height: 1.5;
     color: var(--main-color);
-    letter-spacing: 0.32px;
+    letter-spacing: 0.02em;
     margin-bottom: 16px;
 }
 
@@ -449,7 +465,7 @@ img {
     width: 40px;
     height: 40px;
     background-color: var(--hero-btn-bg-color);
-    border-radius: 25px;
+    border-radius: 50%;
     transition: background-color var(--transition);
 }
 
@@ -543,14 +559,14 @@ img {
     position: absolute;
     font-weight: 400;
     line-height: 1.5;
-    letter-spacing: 0.32px;
+    letter-spacing: 0.02em;
     color: var(--btn-team-bg-color);
     background-color: var(--hero-btn-bg-color);
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 40px 32px 0;
+    padding: 40px 32px;
     transform: translateY(100%);
     transition: transform var(--transition);
 }
@@ -607,6 +623,9 @@ img {
 
 .close-btn {
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     right: 24px;
     top: 24px;
     width: 24px;
@@ -616,20 +635,17 @@ img {
     border-radius: 50%;
     padding: 0;
     cursor: pointer;
-    transition: background-color var(--transition);
+    transition: background-color var(--transition), border var(--transition);
 }
 
-.close-btn:hover,
-.close-btn:focus {
+.close-btn:hover .close-btn-icon,
+.close-btn:focus .close-btn-icon {
+    fill: var(--main-color);
     background-color: var(--accent-bg-color);
+    border: none;
 }
 
 .close-btn-icon {
     fill: var(--font-color);
     transition: fill var(--transition);
-}
-
-.close-btn-icon:hover,
-.close-btn-icon:focus {
-    fill: var(--main-color);
 }
