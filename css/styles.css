@@ -317,6 +317,7 @@ img {
 .team-list {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 24px;
 }
 
@@ -400,7 +401,7 @@ img {
     border: 1px solid var(--client-icon);
     border-radius: 4px;
     color: var(--client-icon);
-    transition: color var(--transition), border var(--transition);
+    transition: border-color var(--transition), color var(--transition);
 }
 
 .clients-icon {
@@ -410,7 +411,7 @@ img {
 .clients-link:hover .clients-icon,
 .clients-link:focus .clients-icon {
     color: var(--accent-color);
-    border: 1px solid var(--accent-color);
+    border-color: var(--accent-color);
 }
 
 /*! section footer */
@@ -497,6 +498,8 @@ img {
     margin-bottom: 72px;
 }
 
+.projects-filters-btn {}
+
 .filter-btn {
     font-family: inherit;
     font-weight: 500;
@@ -512,14 +515,14 @@ img {
     padding: 12px 24px;
     display: block;
     margin: 0 auto;
-    transition: color var(--transition), background-color var(--transition), border var(--transition), box-shadow var(--transition);
+    transition: color var(--transition), background-color var(--transition), border-color var(--transition), box-shadow var(--transition);
 }
 
 .filter-btn:hover,
 .filter-btn:focus {
     color: var(--main-color);
     background-color: var(--accent-bg-color);
-    border: 1px solid transparent;
+    border-color: transparent;
     box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12), 0px 2px 1px 0px rgba(0, 0, 0, 0.08), 0px 3px 1px 0px rgba(0, 0, 0, 0.10);
 }
 
@@ -539,7 +542,7 @@ img {
     display: block;
     border: 1px solid var(--border-color);
     background-color: var(--main-bg-color);
-    transition: border var(--transition), box-shadow var(--transition);
+    transition: box-shadow var(--transition);
 }
 
 .projects-link:hover,
@@ -591,6 +594,7 @@ img {
 .backdrop {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(46, 47, 66, 0.40);
@@ -631,21 +635,21 @@ img {
     width: 24px;
     height: 24px;
     background-color: var(--border-color);
-    border: 1px solid rgba(0, 0, 0, 0.10);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     padding: 0;
     cursor: pointer;
     transition: background-color var(--transition), border var(--transition);
 }
 
-.close-btn:hover .close-btn-icon,
-.close-btn:focus .close-btn-icon {
-    fill: var(--main-color);
-    background-color: var(--accent-bg-color);
-    border: none;
-}
-
 .close-btn-icon {
     fill: var(--font-color);
     transition: fill var(--transition);
+}
+
+.close-btn:hover .close-btn-icon,
+.close-btn:focus .close-btn-icon {
+    fill: var(--main-color);
+    background-color: #404bbf;
+    border: none;
 }
